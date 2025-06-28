@@ -1,0 +1,1207 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optifine AI - Intelligent Automation for Ambitious Businesses</title>
+    <link rel="icon" type="image/png" href="Optifi.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #000 0%, #222 25%, #333 50%, #236982 75%, #4fc3f7 100%);
+            color: white;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: transparent;
+            backdrop-filter: none;
+            z-index: 1000;
+            height: 60px;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 16px auto 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            height: 100%;
+            background: #000;
+            border-radius: 32px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: none;
+            padding: 0;
+            height: 100%;
+        }
+
+        .logo img {
+            height: 100%;
+            width: auto;
+            display: block;
+            background: none;
+        }
+
+        .logo-icon {
+            display: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            color: #4fc3f7;
+        }
+
+        .cta-button {
+            background: #236982;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: #4fc3f7;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(35, 105, 130, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 1rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #4fc3f7, #236982, #fff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn-primary {
+            background: #236982;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            padding: 1rem 2rem;
+            border: 2px solid white;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background: #4fc3f7;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(35, 105, 130, 0.3);
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: #111;
+        }
+
+        .hero-features {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .checkmark {
+            width: 20px;
+            height: 20px;
+            background: #4fc3f7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Chat Demo */
+        .chat-demo {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 16px;
+            padding: 1.5rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .chat-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .chat-dots {
+            display: flex;
+            gap: 0.25rem;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+
+        .dot.red { background: #ef4444; }
+        .dot.yellow { background: #236982; }
+        .dot.green { background: #4fc3f7; }
+
+        .chat-messages {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .message {
+            background: rgba(35, 105, 130, 0.2);
+            padding: 1rem;
+            border-radius: 12px;
+            border-left: 3px solid #236982;
+        }
+
+        .message.user {
+            background: rgba(0, 0, 0, 0.4);
+            border-left-color: #4fc3f7;
+            margin-left: 2rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 2rem;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #236982, #4fc3f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .services p {
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+            opacity: 0.9;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255, 140, 26, 0.2);
+            border-color: rgba(255, 140, 26, 0.3);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: #236982;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .service-card p {
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 6rem 2rem;
+        }
+
+        .testimonials-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .testimonials h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial-card {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255, 140, 26, 0.2);
+        }
+
+        .stars {
+            color: #4fc3f7;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: white;
+        }
+
+        .testimonial-company {
+            color: #4fc3f7;
+            font-size: 0.9rem;
+        }
+
+        /* Pricing */
+        .pricing {
+            padding: 6rem 2rem;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .pricing-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pricing h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #236982, #4fc3f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .pricing-card.featured {
+            border-color: #236982;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured::before {
+            content: "Most Popular";
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #236982;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .plan-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .plan-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4fc3f7;
+            margin-bottom: 1rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .plan-features li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .plan-features .checkmark {
+            width: 16px;
+            height: 16px;
+            background: #4fc3f7;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        /* Contact Form */
+        .contact {
+            padding: 6rem 2rem;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .contact-form {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2rem;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 2rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            background: rgba(0, 0, 0, 0.2);
+            color: white;
+            font-size: 1rem;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        .footer {
+            background: #31829B;
+            padding: 3rem 2rem 1rem;
+            margin-top: 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section ul li a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: #4fc3f7;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .hero-features {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Scroll animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Custom Navigation Styles --- */
+        .logo-nav-row {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 22px;
+            margin-bottom: 4px;
+            gap: 16px;
+        }
+        .logo-section {
+            display: flex;
+            align-items: center;
+            padding: 0;
+        }
+        .logo-section img {
+            width: 250px;
+            height: auto;
+            display: block;
+        }
+        .main-navbar {
+            max-width: 2500px;
+            margin: 0 auto 32px auto;
+            background: #000;
+            border-radius: 32px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 2rem;
+            height: 56px;
+        }
+        .main-navbar .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .main-navbar .nav-menu li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: color 0.2s;
+        }
+        .main-navbar .nav-menu li a:hover {
+            color: #2381a6;
+        }
+        .main-navbar .cta-button {
+            background: #2381a6;
+            color: #fff;
+            padding: 0.7rem 1.5rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1rem;
+            margin-left: 2rem;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(35,129,166,0.10);
+        }
+        .main-navbar .cta-button:hover {
+            background: #1a5c7a;
+        }
+        @media (max-width: 900px) {
+            .logo-nav-row {
+                flex-direction: column;
+                gap: 8px;
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            .main-navbar {
+                max-width: 98vw;
+                padding: 0 1rem;
+            }
+            .main-navbar .nav-menu {
+                gap: 1rem;
+            }
+        }
+        @media (max-width: 600px) {
+            .main-navbar {
+                flex-direction: column;
+                height: auto;
+                padding: 0.5rem 0.5rem;
+            }
+            .main-navbar .nav-menu {
+                flex-direction: column;
+                gap: 0.5rem;
+                width: 100%;
+                align-items: center;
+            }
+            .main-navbar .cta-button {
+                margin: 0.5rem 0 0 0;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo and Navigation Row -->
+    <div class="logo-nav-row">
+        <div class="logo-section">
+            <img src="Optifi.png" alt="Optifine AI Logo" />
+        </div>
+        <nav class="main-navbar">
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Book Free Demo</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content animate-fadeInUp">
+                <h1>Automate Smarter with Optifine AI</h1>
+                <p>Transform your business with intelligent automation. Our AI solutions generate leads, close deals, and provide 24/7 customer support while you focus on scaling.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn-primary">
+                        ⚡ Start Automating Now
+                    </a>
+                    <a href="#pricing" class="btn-secondary">Book Free Demo</a>
+                </div>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <div class="checkmark">✓</div>
+                        <span>No Setup Fees</span>
+                    </div>
+                    <div class="feature-item">
+                        <div class="checkmark">✓</div>
+                        <span>30-Day ROI Guarantee</span>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-demo animate-fadeInUp">
+                <div class="chat-header">
+                    <div class="chat-dots">
+                        <div class="dot red"></div>
+                        <div class="dot yellow"></div>
+                        <div class="dot green"></div>
+                    </div>
+                    <span style="margin-left: 0.5rem;">AI Assistant</span>
+                </div>
+                <div class="chat-messages">
+                    <div class="message">
+                        Hello! I'm your AI assistant. How can I help automate your business today?
+                    </div>
+                    <div class="message user">
+                        I need help with lead generation and appointment setting
+                    </div>
+                    <div class="message">
+                        Perfect! I can set up automated lead capture, qualification, and appointment booking. This typically increases conversion rates by 40-60%.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="services-container">
+            <h2 class="fade-in">Intelligent Automation for Ambitious Businesses</h2>
+            <p class="fade-in">Our AI-powered solutions work 24/7 to grow your business, engage customers, and streamline operations.</p>
+            
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">🤖</div>
+                    <h3>AI Chatbots</h3>
+                    <p>24/7 intelligent customer support that scales with your business</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">🎯</div>
+                    <h3>Sales Automation</h3>
+                    <p>Convert leads into customers with automated sales funnels</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">👥</div>
+                    <h3>Lead Generation</h3>
+                    <p>AI-powered prospecting to find your ideal customers</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">⏰</div>
+                    <h3>Appointment Setting</h3>
+                    <p>Automated scheduling that books meetings while you sleep</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">📧</div>
+                    <h3>Cold Outreach</h3>
+                    <p>Personalized email campaigns that actually get responses</p>
+                </div>
+                <div class="service-card fade-in">
+                    <div class="service-icon">💬</div>
+                    <h3>Customer Support</h3>
+                    <p>Intelligent support automation that delights customers</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials">
+        <div class="testimonials-container">
+            <h2 class="fade-in">What Our Clients Say</h2>
+            <p class="fade-in">See how we've helped businesses automate and scale</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"Optifine AI increased our lead generation by 300% and cut our response time to under 2 minutes."</p>
+                    <div class="testimonial-author">Sarah Johnson</div>
+                    <div class="testimonial-company">TechStart Inc.</div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"The AI chatbot handles 80% of our customer inquiries. Our team can finally focus on strategic work."</p>
+                    <div class="testimonial-author">Marcus Chen</div>
+                    <div class="testimonial-company">Growth Labs</div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="testimonial-text">"ROI was immediate. We closed $50K in new deals in the first month after implementing their automation."</p>
+                    <div class="testimonial-author">Emily Rodriguez</div>
+                    <div class="testimonial-company">Scale Ventures</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="pricing">
+        <div class="pricing-container">
+            <h2 class="fade-in">Choose Your Automation Package</h2>
+            <p class="fade-in">Transparent pricing that scales with your business</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card fade-in">
+                    <div class="plan-name">Starter</div>
+                    <div class="plan-price">$750
+                        <span style="font-size: 1rem; color: rgba(255,255,255,0.8);">/month</span></div>
+                    <ul class="plan-features">
+                        <li><div class="checkmark">✓</div> AI Chatbot Setup</li>
+                        <li><div class="checkmark">✓</div> Lead Capture Forms</li>
+                        <li><div class="checkmark">✓</div> Basic Email Automation</li>
+                        <li><div class="checkmark">✓</div> Monthly Reports</li>
+                        <li><div class="checkmark">✓</div> Email Support</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary" style="width: 100%; text-align: center;" onclick="setPlan('Starter')">Get Started</a>
+                </div>
+                
+                <div class="pricing-card featured fade-in">
+                    <div class="plan-name">Growth</div>
+                    <div class="plan-price">$5,497<span style="font-size: 1rem; color: rgba(255,255,255,0.8);">/month</span></div>
+                    <ul class="plan-features">
+                        <li><div class="checkmark">✓</div> Everything in Starter</li>
+                        <li><div class="checkmark">✓</div> Advanced Lead Scoring</li>
+                        <li><div class="checkmark">✓</div> Appointment Booking</li>
+                        <li><div class="checkmark">✓</div> CRM Integration</li>
+                        <li><div class="checkmark">✓</div> Cold Outreach Campaigns</li>
+                        <li><div class="checkmark">✓</div> Priority Support</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary" style="width: 100%; text-align: center;" onclick="setPlan('Growth')">Get Started</a>
+                </div>
+                
+                <div class="pricing-card fade-in">
+                    <div class="plan-name">Enterprise</div>
+                    <div class="plan-price">Custom</div>
+                    <ul class="plan-features">
+                        <li><div class="checkmark">✓</div> Everything in Growth</li>
+                        <li><div class="checkmark">✓</div> Custom AI Training</li>
+                        <li><div class="checkmark">✓</div> Advanced Analytics</li>
+                        <li><div class="checkmark">✓</div> Multi-Channel Automation</li>
+                        <li><div class="checkmark">✓</div> Dedicated Account Manager</li>
+                        <li><div class="checkmark">✓</div> 24/7 Priority Support</li>
+                    </ul>
+                    <a href="#contact" class="btn-primary" style="width: 100%; text-align: center;" onclick="setPlan('Enterprise')">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="contact">
+        <div class="contact-container">
+            <h2 class="fade-in">Ready to Transform Your Business?</h2>
+            <p class="fade-in">Book a free consultation and see how AI automation can 10x your growth</p>
+            
+            <form id="contact-form" class="contact-form fade-in" action="https://formspree.io/f/xyzjllza" method="POST">
+                <input type="hidden" name="_subject" value="New Contact Form Submission!">
+                <input type="hidden" name="plan" id="selected-plan" value="">
+                <div class="form-row">
+                    <div class="form-group">
+                        <input type="text" name="first_name" placeholder="First Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="last_name" placeholder="Last Name" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" placeholder="Tell us about your business and automation goals..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%; padding: 1.2rem;">Book Your Free Demo</button>
+            </form>
+            <div id="thank-you-message" style="display:none; color:#4fc3f7; margin-top:1rem;">
+              ✓ Thank you! We'll contact you within 24 hours to schedule your free demo.
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <div class="logo" style="margin-bottom: 1rem;">
+                    <img src="Optifi.png" alt="Optifine AI Logo" style="height:211px; width: 217px; display: block; background: none;" />
+                </div>
+                <p style="color: #333;">Intelligent automation solutions for ambitious businesses.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#services">AI Chatbots</a></li>
+                    <li><a href="#services">Sales Automation</a></li>
+                    <li><a href="#services">Lead Generation</a></li>
+                    <li><a href="#services">Cold Outreach</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Company</h3>
+                <ul>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#testimonials">Case Studies</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <ul>
+                    <li><a href="tel:+919664767803">+91 9664767803</a></li>
+                    <li><a href="mailto:nikunjnavin007@gmail.com">nikunjnavin007@gmail.com</a></li>
+                    <li>123 Innovation Drive<br>San Francisco, CA 94105</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Optifine AI. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = '#000';
+            } else {
+                header.style.background = '#000';
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add hover effects to service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add hover effects to testimonial cards
+        document.querySelectorAll('.testimonial-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 25px 50px rgba(255, 140, 26, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 20px 40px rgba(255, 140, 26, 0.2)';
+            });
+        });
+
+        // Add typing animation to chat demo
+        function typeMessage(element, text, speed = 50) {
+            let i = 0;
+            element.innerHTML = '';
+            const timer = setInterval(() => {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(timer);
+                }
+            }, speed);
+        }
+
+        // Initialize typing animation when page loads
+        window.addEventListener('load', () => {
+            const messages = document.querySelectorAll('.chat-demo .message');
+            if (messages.length > 0) {
+                setTimeout(() => {
+                    typeMessage(messages[0], "Hello! I'm your AI assistant. How can I help automate your business today?");
+                }, 1000);
+                
+                setTimeout(() => {
+                    typeMessage(messages[1], "I need help with lead generation and appointment setting");
+                }, 3000);
+                
+                setTimeout(() => {
+                    typeMessage(messages[2], "Perfect! I can set up automated lead capture, qualification, and appointment booking. This typically increases conversion rates by 40-60%.");
+                }, 5000);
+            }
+        });
+
+        // Add particle background effect
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.cssText = `
+                position: fixed;
+                width: 4px;
+                height: 4px;
+                background: rgba(35, 105, 130, 0.3);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: -1;
+                left: ${Math.random() * 100}vw;
+                top: 100vh;
+                animation: float-up ${Math.random() * 3 + 2}s linear infinite;
+            `;
+            
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 5000);
+        }
+
+        // Add CSS for particle animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float-up {
+                to {
+                    transform: translateY(-100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Create particles periodically
+        setInterval(createParticle, 500);
+
+        // Add mobile menu toggle
+        const mobileMenuBtn = document.createElement('button');
+        mobileMenuBtn.innerHTML = '☰';
+        mobileMenuBtn.style.cssText = `
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            @media (max-width: 768px) {
+                display: block;
+            }
+        `;
+        
+        // Add mobile responsiveness
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
+        function handleMobileView(e) {
+            const navMenu = document.querySelector('.nav-menu');
+            if (e.matches) {
+                navMenu.style.display = 'none';
+                document.querySelector('.nav-container').appendChild(mobileMenuBtn);
+            } else {
+                navMenu.style.display = 'flex';
+                if (mobileMenuBtn.parentNode) {
+                    mobileMenuBtn.parentNode.removeChild(mobileMenuBtn);
+                }
+            }
+        }
+        
+        mediaQuery.addListener(handleMobileView);
+        handleMobileView(mediaQuery);
+
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const form = e.target;
+          const data = new FormData(form);
+          const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          if (response.ok) {
+            form.reset();
+            document.getElementById('thank-you-message').style.display = 'block';
+          } else {
+            alert('There was a problem submitting your form. Please try again.');
+          }
+        });
+
+        function setPlan(plan) {
+          document.getElementById('selected-plan').value = plan;
+        }
+    </script>
+</body>
+</html>

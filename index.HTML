@@ -14,10 +14,27 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #000 0%, #222 25%, #333 50%, #236982 75%, #4fc3f7 100%);
+            background: linear-gradient(180deg, #000 0%, #6d00b3 100%) !important;
             color: white;
             line-height: 1.6;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            left: 0; right: 0; top: 0; bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+            background: url('data:image/svg+xml;utf8,<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="purpleWave" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="%238400ff" stop-opacity="0.8"/><stop offset="100%" stop-color="%23000" stop-opacity="0"/></linearGradient></defs><path d="M0 700 Q 480 600 960 700 T 1920 700 V1080 H0 Z" fill="url(%23purpleWave)"/></svg>');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: top;
+            opacity: 0.85;
+            mix-blend-mode: lighten;
         }
 
         /* Header */
@@ -546,7 +563,7 @@
 
         /* Footer */
         .footer {
-            background: #31829B;
+            background: #000 !important;
             padding: 3rem 2rem 1rem;
             margin-top: 2rem;
         }
@@ -557,6 +574,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
+            background: #000 !important;
         }
 
         .footer-section h3 {
@@ -588,6 +606,7 @@
             margin-top: 2rem;
             border-top: 1px solid rgba(0, 0, 0, 0.1);
             color: #333;
+            background: #000 !important;
         }
 
         /* Responsive Design */
@@ -650,23 +669,37 @@
 
         /* --- Custom Navigation Styles --- */
         .logo-nav-row {
-            width: 100%;
+            width: 100vw;
+            background: #000;
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-top: 22px;
-            margin-bottom: 4px;
+            margin-top: 0;
+            margin-bottom: 0;
             gap: 16px;
+            border-radius: 0;
+            box-shadow: none;
+            padding: 32px 0 12px 0;
         }
         .logo-section {
             display: flex;
             align-items: center;
             padding: 0;
+            background: none;
+            box-shadow: none;
+            border-radius: 0;
+            position: relative;
+            color: #fff;
+            text-shadow: 0 2px 12px #fff, 0 0px 24px #a259ff;
         }
         .logo-section img {
             width: 250px;
             height: auto;
             display: block;
+            opacity: 1;
+            filter: brightness(2) contrast(1.3) drop-shadow(0 0 16px #fff);
+            z-index: 2;
+            position: relative;
         }
         .main-navbar {
             max-width: 1400px;
@@ -681,6 +714,8 @@
             justify-content: space-between;
             padding: 0 2rem;
             height: 56px;
+            z-index: 10;
+            position: relative;
         }
         .main-navbar .nav-menu {
             display: flex;
@@ -749,9 +784,74 @@
                 text-align: center;
             }
         }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.18;
+            background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100" height="100" filter="url(%23noiseFilter)" /></svg>');
+            background-size: 200px 200px;
+        }
+
+        .animated-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .bg-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px);
+            opacity: 0.7;
+            mix-blend-mode: lighten;
+            animation: moveGlow 12s ease-in-out infinite alternate;
+        }
+
+        .bg-glow.one {
+            width: 60vw; height: 60vw;
+            left: -20vw; top: 10vh;
+            background: radial-gradient(circle, #a259ff 0%, #6d00b3 80%, transparent 100%);
+            animation-delay: 0s;
+        }
+        .bg-glow.two {
+            width: 50vw; height: 50vw;
+            right: -15vw; top: 40vh;
+            background: radial-gradient(circle, #a259ff 0%, #6d00b3 80%, transparent 100%);
+            animation-delay: 3s;
+        }
+        .bg-glow.three {
+            width: 40vw; height: 40vw;
+            left: 30vw; bottom: -10vw;
+            background: radial-gradient(circle, #a259ff 0%, #6d00b3 80%, transparent 100%);
+            animation-delay: 6s;
+        }
+
+        @keyframes moveGlow {
+            0% { transform: scale(1) translateY(0) translateX(0);}
+            100% { transform: scale(1.1) translateY(-40px) translateX(40px);}
+        }
+
+        .footer, .footer-section, .footer-bottom {
+            font-size: 1.15rem;
+            color: #fff !important;
+            text-shadow: 0 2px 12px #fff, 0 0px 24px #a259ff;
+        }
     </style>
 </head>
 <body>
+    <div class="animated-bg">
+        <div class="bg-glow one"></div>
+        <div class="bg-glow two"></div>
+        <div class="bg-glow three"></div>
+    </div>
     <!-- Logo and Navigation Row -->
     <div class="logo-nav-row">
         <div class="logo-section">
@@ -824,32 +924,32 @@
             
             <div class="services-grid">
                 <div class="service-card fade-in">
-                    <div class="service-icon">🤖</div>
+                    <div class="service-icon"><img src="ai-chatbot-icon-7378838-512.png" alt="AI Chatbots Icon" style="width:48px;height:48px;"></div>
                     <h3>AI Chatbots</h3>
                     <p>24/7 intelligent customer support that scales with your business</p>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-icon">🎯</div>
+                    <div class="service-icon"><img src="sales-icon-7848241-512.png" alt="Sales Automation Icon" style="width:48px;height:48px;"></div>
                     <h3>Sales Automation</h3>
                     <p>Convert leads into customers with automated sales funnels</p>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-icon">👥</div>
+                    <div class="service-icon"><img src="leads-icon-7929094-512.png" alt="Lead Generation Icon" style="width:48px;height:48px;"></div>
                     <h3>Lead Generation</h3>
                     <p>AI-powered prospecting to find your ideal customers</p>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-icon">⏰</div>
+                    <div class="service-icon"><img src="calendar-event-alarm-icon-234324-512.png" alt="Appointment Setting Icon" style="width:48px;height:48px;"></div>
                     <h3>Appointment Setting</h3>
                     <p>Automated scheduling that books meetings while you sleep</p>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-icon">📧</div>
+                    <div class="service-icon"><img src="outreach-icon-7085170-512.png" alt="Cold Outreach Icon" style="width:48px;height:48px;"></div>
                     <h3>Cold Outreach</h3>
                     <p>Personalized email campaigns that actually get responses</p>
                 </div>
                 <div class="service-card fade-in">
-                    <div class="service-icon">💬</div>
+                    <div class="service-icon"><img src="customer-support-icon-7896164-512.png" alt="Customer Support Icon" style="width:48px;height:48px;"></div>
                     <h3>Customer Support</h3>
                     <p>Intelligent support automation that delights customers</p>
                 </div>
@@ -909,14 +1009,14 @@
                 
                 <div class="pricing-card featured fade-in">
                     <div class="plan-name">Growth</div>
-                    <div class="plan-price">$5,497<span style="font-size: 1rem; color: rgba(255,255,255,0.8);">/month</span></div>
+                    <div class="plan-price">$4,500<span style="font-size: 1rem; color: rgba(255,255,255,0.8);">/month</span></div>
                     <ul class="plan-features">
-                        <li><div class="checkmark">✓</div> Everything in Starter</li>
-                        <li><div class="checkmark">✓</div> Advanced Lead Scoring</li>
-                        <li><div class="checkmark">✓</div> Appointment Booking</li>
-                        <li><div class="checkmark">✓</div> CRM Integration</li>
-                        <li><div class="checkmark">✓</div> Cold Outreach Campaigns</li>
-                        <li><div class="checkmark">✓</div> Priority Support</li>
+                        <li><div class="checkmark">✓</div> AI-Powered Website Support Chatbot Automation</li>
+                        <li><div class="checkmark">✓</div> Social Media Chatbots for WhatsApp, Instagram, and Slack</li>
+                        <li><div class="checkmark">✓</div> Automated Lead Generation & Follow-Up System</li>
+                        <li><div class="checkmark">✓</div> AI Voice Receptionist for Call Handling</li>
+                        <li><div class="checkmark">✓</div> End-to-End CRM Automation with AI Integration</li>
+                        <li><div class="checkmark">✓</div> Monthly Performance Reporting & Documentation</li>
                     </ul>
                     <a href="#contact" class="btn-primary" style="width: 100%; text-align: center;" onclick="setPlan('Growth')">Get Started</a>
                 </div>

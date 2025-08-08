@@ -1306,109 +1306,55 @@
         }
     </script>
     <!-- n8n Chat Widget -->
-    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
     <style>
-        /* Make the n8n chat header smaller and remove extra gap */
-        :root {
-            --chat--heading--font-size: 1.15em;
-            --chat--subtitle--font-size: 0.9em;
-            --chat--subtitle--line-height: 1.2;
-            /* top right bottom left */
-            --chat--header--padding: 8px 12px 0px 12px;
-            --chat--header--border-bottom: none;
-            --chat--header--background: #ffffff;
-            --chat--header--color: #000000;
-        }
-        
-        /* Remove gap between header and chat body */
-        .chat-widget {
-            border-top: none !important;
-        }
-        
-        .chat-widget .chat-header {
-            border-bottom: none !important;
-            margin-bottom: 0 !important;
-            padding-bottom: 0 !important;
-        }
-        
-        .chat-widget .chat-messages {
-            margin-top: 0 !important;
-            padding-top: 0 !important;
-        }
-        
-        /* Target all possible gap elements */
-        .chat-widget * {
-            border-bottom: none !important;
-        }
-        
-        .chat-widget .chat-container {
-            border-top: none !important;
-            margin-top: 0 !important;
-            padding-top: 0 !important;
-        }
-        
-        .chat-widget .chat-body {
-            border-top: none !important;
-            margin-top: 0 !important;
-            padding-top: 0 !important;
-        }
-        
-        /* Remove any white lines or borders */
-        .chat-widget .chat-header::after,
-        .chat-widget .chat-header::before {
+        /* Hide the "Powered by n8n" footer */
+        .chat-widget [class*="footer"],
+        .chat-widget [class*="powered"],
+        .chat-widget .footer,
+        .chat-widget .powered-by,
+        .chat-widget .n8n-footer,
+        .chat-container [class*="footer"],
+        .chat-container [class*="powered"],
+        .chat-container .footer,
+        .chat-container .powered-by,
+        .chat-container .n8n-footer,
+        [class*="footer"],
+        [class*="powered"],
+        .footer,
+        .powered-by,
+        .n8n-footer {
             display: none !important;
-        }
-        
-        .chat-widget .chat-messages::before,
-        .chat-widget .chat-messages::after {
-            display: none !important;
-        }
-        
-        /* Style the YouCorp logo in header */
-        .chat-widget .chat-header h1 {
-            font-family: 'Arial', sans-serif;
-            font-weight: bold;
-            color: #000000 !important;
-        }
-        
-        .chat-widget .chat-header h1::before {
-            content: '';
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            background: linear-gradient(45deg, #ffd700 0%, #ffd700 50%, transparent 50%, transparent 100%);
-            margin-right: 8px;
-            vertical-align: middle;
-        }
-        
-        .chat-widget .chat-header h1::after {
-            content: '';
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            background: linear-gradient(45deg, transparent 0%, transparent 50%, #20b69e 50%, #20b69e 100%);
-            margin-left: 8px;
-            vertical-align: middle;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            height: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
         }
     </style>
-    <script type="module">
-        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
-
-        createChat({
-            webhookUrl: 'https://youcorp.app.n8n.cloud/webhook/5eb24ba8-6e84-4069-b2b7-15a6426dbbdc/chat',
-            initialMessages: [
-                'HI I am donna from Youcorp insurance how can i assist you today'
-            ],
-            i18n: {
-                en: {
-                    title: 'YouCorp',
-                    subtitle: "Start a chat. We're here to help you 24/7.",
-                    footer: '',
-                    getStarted: 'New Conversation',
-                    inputPlaceholder: 'Type your question..',
-                },
+    <script>
+               window.ChatWidgetConfig = {
+            webhook: {
+                url: 'https://youcorp.app.n8n.cloud/webhook/5eb24ba8-6e84-4069-b2b7-15a6426dbbdc/chat',
+                route: 'general'
+            },
+            branding: {
+                logo: 'https://github.com/Adoniss07/OptifineAI/blob/main/image-removebg-preview.png',
+                name: 'Youcorp',
+                welcomeText: 'Hello! I\'m Donna, your support bot from Youcorp. How can I help you with your insurance today?',
+                responseTimeText: 'We usually respond right away'
+            },
+            style: {
+                primaryColor: '#54dde4',
+                secondaryColor: '#172565',
+                position: 'right',
+                backgroundColor: '#ffffff',
+                fontColor: '#333333'
             }
-        });
-    </script>
+        };
+
+       const script = document.createElement('script');
+       script.src = 'https://cdn.jsdelivr.net/gh/WayneSimpson/n8n-chatbot-template@ba944c3/chat-widget.js';
+       document.body.appendChild(script);
+   </script>
 </body>
 </html>

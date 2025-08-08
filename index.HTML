@@ -1305,6 +1305,14 @@
           document.getElementById('selected-plan').value = plan;
         }
     </script>
-    <script id="omnidimension-web-widget" async src="https://backend.omnidim.io/web_widget.js?secret_key=87d4840aba424489f2cee3ff6a265cab"></script>
+    <!-- n8n Chat Widget -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+        createChat({
+            webhookUrl: 'https://youcorp.app.n8n.cloud/webhook/5eb24ba8-6e84-4069-b2b7-15a6426dbbdc/chat'
+        });
+    </script>
 </body>
 </html>

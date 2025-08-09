@@ -5,39 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Optifine AI - Intelligent Automation for Ambitious Businesses</title>
     <link rel="icon" type="image/png" href="Optifi.png">
+    <!-- n8n Chatbot CSS -->
     <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
     <style>
-        /* Custom n8n Chatbot Styling */
-        .n8n-chat-widget {
-            --n8n-chat-primary-color: #236982 !important;
-            --n8n-chat-secondary-color: #4fc3f7 !important;
-            --chat--header-height: 50px !important;
-            --chat--header--padding: 0.5rem !important;
-        }
-        
-        /* Hide or modify initial greeting if possible */
-        .n8n-chat-message[data-message-type="bot"]:first-child,
-        .n8n-chat-message:first-child {
-            display: none !important;
-        }
-        
-        /* Custom styling for the chat widget */
-        .n8n-chat-container {
-            border-radius: 16px !important;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
-        }
-        
-        /* Reduce header thickness */
-        .n8n-chat-header {
-            min-height: 50px !important;
-            padding: 0.5rem 1rem !important;
-        }
-        
-        .n8n-chat-header h1 {
-            font-size: 1.2rem !important;
-            margin: 0 !important;
-            line-height: 1.2 !important;
-        }
         * {
             margin: 0;
             padding: 0;
@@ -877,18 +847,36 @@
             text-shadow: 0 2px 12px #fff, 0 0px 24px #a259ff;
         }
 
-        /* Glassmorphism effect for main containers */
-        .chat-demo,
-        .service-card,
-        .testimonial-card,
-        .pricing-card,
-        .contact-form {
-            background: rgba(255, 255, 255, 0.12) !important;
+        /* Custom n8n Chatbot Styling */
+        .n8n-chat-widget {
+            --n8n-chat-primary-color: #236982 !important;
+            --n8n-chat-secondary-color: #4fc3f7 !important;
+            --chat--header-height: 50px !important;
+            --chat--header--padding: 0.5rem !important;
+        }
+        
+        /* Hide or modify initial greeting if possible */
+        .n8n-chat-message[data-message-type="bot"]:first-child,
+        .n8n-chat-message:first-child {
+            display: none !important;
+        }
+        
+        /* Custom styling for the chat widget */
+        .n8n-chat-container {
             border-radius: 16px !important;
-            box-shadow: 0 4px 32px 0 rgba(31, 38, 135, 0.18) !important;
-            backdrop-filter: blur(18px) !important;
-            -webkit-backdrop-filter: blur(18px) !important;
-            border: 1.5px solid rgba(255, 255, 255, 0.22) !important;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3) !important;
+        }
+        
+        /* Reduce header thickness */
+        .n8n-chat-header {
+            min-height: 50px !important;
+            padding: 0.5rem 1rem !important;
+        }
+        
+        .n8n-chat-header h1 {
+            font-size: 1.2rem !important;
+            margin: 0 !important;
+            line-height: 1.2 !important;
         }
     </style>
 </head>
@@ -949,7 +937,7 @@
                 </div>
                 <div class="chat-messages">
                     <div class="message">
-                        Hello! I'm your AI assistant. How can I help automate your business today?
+                        Hello! I'm Donna from Youcorp insurance How can I assist you today ?
                     </div>
                     <div class="message user">
                         I need help with lead generation and appointment setting
@@ -1041,8 +1029,8 @@
             <div class="pricing-grid">
                 <div class="pricing-card fade-in">
                     <div class="plan-name">Starter</div>
-                    <div class="plan-price">$750
-                        <span style="font-size: 1rem; color: rgba(255,255,255,0.8);">/month</span></div>
+                    <div class="plan-price">$1500
+                        <span style="font-size: 1rem; color: rgba(255,255,255,0.8);">/year</span></div>
                     <ul class="plan-features">
                         <li><div class="checkmark">✓</div> AI Chatbot Setup</li>
                         <li><div class="checkmark">✓</div> Lead Capture Forms</li>
@@ -1055,7 +1043,7 @@
                 
                 <div class="pricing-card featured fade-in">
                     <div class="plan-name">Growth</div>
-                    <div class="plan-price">$4,500<span style="font-size: 1rem; color: rgba(255,255,255,0.8);">/month</span></div>
+                    <div class="plan-price">$4,500<span style="font-size: 1rem; color: rgba(255,255,255,0.8);">/year</span></div>
                     <ul class="plan-features">
                         <li><div class="checkmark">✓</div> AI-Powered Website Support Chatbot Automation</li>
                         <li><div class="checkmark">✓</div> Social Media Chatbots for WhatsApp, Instagram, and Slack</li>
@@ -1156,7 +1144,202 @@
         </div>
     </footer>
 
-    <!-- n8n Chatbot -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.background = '#000';
+            } else {
+                header.style.background = '#000';
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all fade-in elements
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Add hover effects to service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px) scale(1.02)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add hover effects to testimonial cards
+        document.querySelectorAll('.testimonial-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px)';
+                this.style.boxShadow = '0 25px 50px rgba(255, 140, 26, 0.3)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+                this.style.boxShadow = '0 20px 40px rgba(255, 140, 26, 0.2)';
+            });
+        });
+
+        // Add typing animation to chat demo
+        function typeMessage(element, text, speed = 50) {
+            let i = 0;
+            element.innerHTML = '';
+            const timer = setInterval(() => {
+                if (i < text.length) {
+                    element.innerHTML += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(timer);
+                }
+            }, speed);
+        }
+
+        // Initialize typing animation when page loads
+        window.addEventListener('load', () => {
+            const messages = document.querySelectorAll('.chat-demo .message');
+            if (messages.length > 0) {
+                setTimeout(() => {
+                    typeMessage(messages[0], "Hello! I'm Donna from Youcorp insurance How can I assist you today ?");
+                }, 1000);
+                
+                setTimeout(() => {
+                    typeMessage(messages[1], "I need help with lead generation and appointment setting");
+                }, 3000);
+                
+                setTimeout(() => {
+                    typeMessage(messages[2], "Perfect! I can set up automated lead capture, qualification, and appointment booking. This typically increases conversion rates by 40-60%.");
+                }, 5000);
+            }
+        });
+
+        // Add particle background effect
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.cssText = `
+                position: fixed;
+                width: 4px;
+                height: 4px;
+                background: rgba(35, 105, 130, 0.3);
+                border-radius: 50%;
+                pointer-events: none;
+                z-index: -1;
+                left: ${Math.random() * 100}vw;
+                top: 100vh;
+                animation: float-up ${Math.random() * 3 + 2}s linear infinite;
+            `;
+            
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 5000);
+        }
+
+        // Add CSS for particle animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes float-up {
+                to {
+                    transform: translateY(-100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Create particles periodically
+        setInterval(createParticle, 500);
+
+        // Add mobile menu toggle
+        const mobileMenuBtn = document.createElement('button');
+        mobileMenuBtn.innerHTML = '☰';
+        mobileMenuBtn.style.cssText = `
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            @media (max-width: 768px) {
+                display: block;
+            }
+        `;
+        
+        // Add mobile responsiveness
+        const mediaQuery = window.matchMedia('(max-width: 768px)');
+        function handleMobileView(e) {
+            const navMenu = document.querySelector('.nav-menu');
+            if (e.matches) {
+                navMenu.style.display = 'none';
+                document.querySelector('.nav-container').appendChild(mobileMenuBtn);
+            } else {
+                navMenu.style.display = 'flex';
+                if (mobileMenuBtn.parentNode) {
+                    mobileMenuBtn.parentNode.removeChild(mobileMenuBtn);
+                }
+            }
+        }
+        
+        mediaQuery.addListener(handleMobileView);
+        handleMobileView(mediaQuery);
+
+        document.getElementById('contact-form').addEventListener('submit', async function(e) {
+          e.preventDefault();
+          const form = e.target;
+          const data = new FormData(form);
+          const response = await fetch(form.action, {
+            method: form.method,
+            body: data,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          if (response.ok) {
+            form.reset();
+            document.getElementById('thank-you-message').style.display = 'block';
+          } else {
+            alert('There was a problem submitting your form. Please try again.');
+          }
+        });
+
+        function setPlan(plan) {
+          document.getElementById('selected-plan').value = plan;
+        }
+    </script>
+    <!-- n8n Chatbot JavaScript -->
     <script type="module">
         import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
 
@@ -1180,6 +1363,5 @@
             defaultLanguage: 'en'
         });
     </script>
-
 </body>
 </html>
